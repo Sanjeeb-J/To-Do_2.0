@@ -10,9 +10,7 @@ const firebaseConfig = {
   appId: "1:6040512462:web:362e154617af56f5092d9f",
 };
 
-// Initialize Firebase (using the global firebase object from CDN)
 firebase.initializeApp(firebaseConfig);
 
-// Expose auth & db
 const auth = firebase.auth();
 const db = firebase.database();
