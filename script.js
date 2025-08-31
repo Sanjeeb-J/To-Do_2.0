@@ -9,6 +9,16 @@ auth.onAuthStateChanged((user) => {
   }
 });
 
+const input = document.getElementById("taskInput");
+const button = document.getElementById("addBtn");
+
+input.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    button.click(); 
+  }
+});
+
 function addTask() {
   const task = taskInput.value.trim();
   if (task === "") return;
@@ -33,15 +43,17 @@ function loadTasks(uid) {
       const li = document.createElement("li");
       li.textContent = taskData.text;
 
-      const delBtn = document.createElement("button");
-      delBtn.textContent = "❌";
-      delBtn.onclick = () => userTasksRef.child(taskId).remove();
+      // Right-click to delete
+      li.addEventListener("contextmenu", (e) => {
+        e.preventDefault(); // prevent the default context menu
+        userTasksRef.child(taskId).remove();
+      });
 
-      li.appendChild(delBtn);
       taskList.appendChild(li);
     });
   });
 }
+
 
 function logout() {
   auth.signOut().then(() => (window.location.href = "index.html"));

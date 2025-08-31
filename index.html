@@ -1,23 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
+    <title>Login To-Do</title>
     <meta charset="UTF-8" />
-    <title>Login - ToDo App</title>
     <link rel="stylesheet" href="style.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
   </head>
+
   <body>
     <div class="container">
-      <h2>ToDo App - Login</h2>
-      <input type="email" id="email" placeholder="Email" />
-      <input type="password" id="password" placeholder="Password" />
-      <button onclick="login()">Login</button>
-      <button onclick="signup()">Sign Up</button>
+      <img src="assets/task-wise.png" />
+      <h2 style="font-style: italic;">Stay Organized, Stay Ahead</h2>
+
+      <div class="login">
+        <h2>Login </h2>
+        <input type="email" id="email" placeholder="Email" />
+        <input type="password" id="password" placeholder="Password" />
+        <div>
+          <button onclick="login()">Login</button>
+          <button onclick="signup()">Sign Up</button>
+        </div>
+      </div>
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
     <script src="firebase.js"></script>
+    <script src="app.js"></script>
+
 
     <script>
       function login() {
